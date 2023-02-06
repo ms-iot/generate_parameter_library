@@ -974,10 +974,10 @@ class GenerateCode:
                 "yaml file path, [validate include header]"
             )
 
-        param_gen_directory = sys.argv[0].split("/")
-        param_gen_directory = "".join(x + "/" for x in param_gen_directory[:-1])
-        if param_gen_directory[-1] != "/":
-            param_gen_directory += "/"
+        param_gen_directory = sys.argv[0].split(os.sep)
+        param_gen_directory = "".join(x + os.sep for x in param_gen_directory[:-1])
+        if param_gen_directory[-1] != os.sep:
+            param_gen_directory += os.sep
 
         output_file = sys.argv[1]
         output_dir = os.path.dirname(output_file)
